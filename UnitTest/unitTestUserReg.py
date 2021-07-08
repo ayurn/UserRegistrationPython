@@ -39,3 +39,15 @@ class TestUserRegistration(unittest.TestCase):
         user = UserRegistration()
         result = user.email_regex(email)
         self.assertFalse(result)
+
+    def test_phone_number_regex_givenCorrectPhoneNumber_shouldReturnTrue(self):
+        phone_number = "91 8210029078"
+        user = UserRegistration()
+        result = user.phone_number_regex(phone_number)
+        self.assertTrue(result)
+
+    def test_phone_number_regex_givenIncorrectPhoneNumber_shouldReturnTrue(self):
+        phone_number = "918210029078"
+        user = UserRegistration()
+        result = user.phone_number_regex(phone_number)
+        self.assertFalse(result)
