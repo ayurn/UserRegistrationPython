@@ -102,8 +102,8 @@ class TestUserRegistration(unittest.TestCase):
             Test case for checking valid password
         """
         user = UserRegistration()
-        self.assertTrue(user.password_regex("qwreydh4"))
-        self.assertTrue(user.password_regex("aghdge34"))
+        self.assertTrue(user.password_regex("amcnfRwu@18"))
+        self.assertTrue(user.password_regex("Ayur@nina123"))
 
     def test_password_regex_givenIncorrectPassword_shouldReturnFalse(self):
         """
