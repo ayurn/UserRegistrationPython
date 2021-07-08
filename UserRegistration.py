@@ -33,7 +33,7 @@ class UserRegistration :
     def email_regex(self, email):
         """
        Description:
-           Function to validate last name.
+           Function to validate email.
        Parameter:
            email : get email to validate
        """
@@ -46,7 +46,7 @@ class UserRegistration :
     def phone_number_regex(self, phone_number):
         """
        Description:
-           Function to validate last name.
+           Function to validate phone number.
        Parameter:
            phone_number : get phone_number to validate
        """
