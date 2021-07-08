@@ -1,6 +1,8 @@
 import unittest
+import sys
+sys.path.insert(0, '/home/ayur/PycharmProjects/UserRegistration/src/')
 
-from UserRegistration import UserRegistration
+from src.UserRegistration import UserRegistration
 
 class TestUserRegistration(unittest.TestCase):
 
