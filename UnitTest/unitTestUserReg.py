@@ -95,3 +95,21 @@ class TestUserRegistration(unittest.TestCase):
         user = UserRegistration()
         result = user.phone_number_regex(phone_number)
         self.assertFalse(result)
+
+    def test_password_regex_givenCorrectPassword_shouldReturnTrue(self):
+        """
+        Description:
+            Test case for checking valid password
+        """
+        user = UserRegistration()
+        self.assertTrue(user.password_regex("qwreydh4"))
+        self.assertTrue(user.password_regex("aghdge34"))
+
+    def test_password_regex_givenIncorrectPassword_shouldReturnFalse(self):
+        """
+        Description:
+            Test case for checking invalid password
+        """
+        user = UserRegistration()
+        self.assertFalse(user.password_regex("@nvgb"))
+        self.assertFalse(user.password_regex("$rgrg"))

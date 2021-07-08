@@ -67,3 +67,16 @@ class UserRegistration :
         except Exception:
             loggerfile.Logger("debug", "Invalid Program")
 
+    def password_regex(self, password):
+        """
+       Description:
+           Function to validate password.
+       Parameter:
+           password : get password to validate
+       """
+        try:
+            password_regex = "^[A-Za-z0-9_@$]{8,}$"
+            return bool(re.match(password_regex, password))
+        except Exception:
+            loggerfile.Logger("debug", "Invalid Program")
+
