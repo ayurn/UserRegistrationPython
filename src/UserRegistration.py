@@ -1,4 +1,3 @@
-
 """
 @Author: Ayur Ninawe
 @Date: 2021-07-07 18:15:30
@@ -12,6 +11,7 @@ import loggerfile
 
 
 class UserRegistration :
+
     def __init__(self) :
         pass
 
@@ -80,3 +80,14 @@ class UserRegistration :
         except Exception:
             loggerfile.Logger("debug", "Invalid Program")
 
+    def multipleMailValidation(self, validMailIds):
+        """
+        Description:
+            this function validate multiple mails
+        """
+        try:
+            email_pattern = "^[a-zA-Z0-9]{3,}([\\.\\+\\-]?[a-zA-Z0-9]{3,})?[@][A-Za-z0-9]{1,}[.][A-Za-z]{2,4}[,]?([.][A-Za-z]{2,4}[.]?)?$"
+            for email in validMailIds:
+                return bool(re.match(email_pattern, email))
+        except Exception:
+            loggerfile.Logger("debug", "Invalid Program")

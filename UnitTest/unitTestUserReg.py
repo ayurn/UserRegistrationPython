@@ -13,6 +13,7 @@ import sys
 sys.path.insert(0, '/home/ayur/PycharmProjects/UserRegistration/src/')
 
 from src.UserRegistration import UserRegistration
+from src.emailTest import EmailTest
 
 class TestUserRegistration(unittest.TestCase):
 
@@ -115,3 +116,19 @@ class TestUserRegistration(unittest.TestCase):
         self.assertFalse(user.password_regex("@nvgb"))
         self.assertFalse(user.password_regex("$rgrg"))
         self.assertFalse(user.password_regex("fdfer"))
+
+    def test_givenValidMultipleMails_shouldReturnTrue(self):
+        """
+        Description:
+            this function validate multiple mails
+        """
+        user = UserRegistration()
+        self.assertTrue(user.multipleMailValidation(EmailTest.validMailIds))
+
+    def test_givenInvalidMultipleMails_shouldReturnFalse(self):
+        """
+        Description:
+            this function validate multiple mails
+        """
+        user = UserRegistration()
+        self.assertFalse(user.multipleMailValidation(EmailTest.invalidMmailIds))
