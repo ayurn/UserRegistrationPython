@@ -102,9 +102,9 @@ class TestUserRegistration(unittest.TestCase):
             Test case for checking valid password
         """
         user = UserRegistration()
-        self.assertTrue(user.password_regex("@123xAyzamar"))
-        self.assertTrue(user.password_regex("Ayur@nina123"))
-        self.assertTrue(user.password_regex("Ayur123@ninawe"))
+        self.assertTrue(user.password_regex("avaArxyx@12"))
+        self.assertTrue(user.password_regex("123@xAyurwsar"))
+        self.assertTrue(user.password_regex("Ayur@ninawe123"))
 
     def test_password_regex_givenIncorrectPassword_shouldReturnFalse(self):
         """
@@ -114,3 +114,4 @@ class TestUserRegistration(unittest.TestCase):
         user = UserRegistration()
         self.assertFalse(user.password_regex("@nvgb"))
         self.assertFalse(user.password_regex("$rgrg"))
+        self.assertFalse(user.password_regex("fdfer"))

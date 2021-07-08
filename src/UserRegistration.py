@@ -75,7 +75,7 @@ class UserRegistration :
            password : get password to validate
        """
         try:
-            password_regex = "(?=.*[A-Z])(?=.*[0-9])([A-Z0-9a-z_@$]).{8,20}$"
+            password_regex = "(?=.*[A-Z])(?=.*[0-9])(?=.*[@_$%&])([A-Z0-9a-z]).{8,20}$"
             return bool(re.match(password_regex, password))
         except Exception:
             loggerfile.Logger("debug", "Invalid Program")
